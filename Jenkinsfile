@@ -75,7 +75,7 @@ pipeline {
               sh 'jx step changelog --version v\$(cat ../../VERSION)'
 
               // release the helm chart
-	      sh 'helm init --upgrade'
+		sh 'helm init --force-upgrade'
               sh 'jx step helm release'
 
               // promote through all 'Auto' promotion Environments
